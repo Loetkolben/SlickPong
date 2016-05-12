@@ -7,11 +7,11 @@ import org.newdawn.slick.geom.Circle;
 @SuppressWarnings("serial")
 public class Ball extends Circle {
 	public static int RADIUS = 8;
-	private static float DEFAULT_DELTA = 1;
+	private static float DELTA_MULTIPLIER = (float) 1.5;
 	
 	private int centerPointX, centerPointY;
 	
-	private double deltaX = DEFAULT_DELTA, deltaY = DEFAULT_DELTA;
+	private double deltaX = DELTA_MULTIPLIER, deltaY = DELTA_MULTIPLIER;
 	
 	public Ball(int centerPointX, int centerPointY) {
 		super(centerPointX, centerPointY, RADIUS);
@@ -29,8 +29,8 @@ public class Ball extends Circle {
 	private void recalcStartingDeltas(){
 		Random r = new Random();
 		double direction = (180.0 / Math.PI) * r.nextInt();
-		deltaX = Math.cos(direction);
-		deltaY = Math.sin(direction);
+		deltaX = Math.cos(direction) * DELTA_MULTIPLIER;
+		deltaY = Math.sin(direction) * DELTA_MULTIPLIER;
 	}
 	
 	public double getDeltaX(){
