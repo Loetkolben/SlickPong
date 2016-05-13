@@ -64,7 +64,8 @@ public class SlickPong extends BasicGame{
 					(windowHeight - g.getFont().getHeight(msg)) / 2 , msg, Color.white);
 		}
 	}
-
+	
+	// FIXME: Limit the "update method runs"/second to have a consistent experience (VSync off -> pretty fast game)
 	@Override
 	public void update(GameContainer gc, int delta) throws SlickException {
 		Input input = gc.getInput();
@@ -89,6 +90,7 @@ public class SlickPong extends BasicGame{
 			if(input.isKeyDown(Input.KEY_DOWN)) sliderRight.moveDown();
 			
 			// Ball Movement: Collision
+			// FIXME: Only collide once with one "border" (to prevent the ball from clipping in the Sliders)
 			/*
 			if(ball.getX() + ball.getDeltaX() < 0){
 				// Collision Left

@@ -27,6 +27,7 @@ public class Ball extends Circle {
 	}
 	
 	private void recalcStartingDeltas(){
+		// FIXME: Annoying if movement direction is directly up or down, or not far away from such values
 		Random r = new Random();
 		double direction = (180.0 / Math.PI) * r.nextInt(360);
 		deltaX = Math.cos(direction) * DELTA_MULTIPLIER;

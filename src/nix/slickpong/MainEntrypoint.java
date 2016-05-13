@@ -30,6 +30,7 @@ public class MainEntrypoint {
 		}
 		
 		// Finally, the actual game!
+		// TODO: [Feature] Width and Height, VSync / maxFPS from CommandLine Args
 		SlickPong pong = new SlickPong(WIDTH, HEIGHT);
 		AppGameContainer appgc = new AppGameContainer(pong);
 		
