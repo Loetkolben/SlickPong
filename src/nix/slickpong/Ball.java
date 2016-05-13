@@ -28,7 +28,7 @@ public class Ball extends Circle {
 	
 	private void recalcStartingDeltas(){
 		Random r = new Random();
-		double direction = (180.0 / Math.PI) * r.nextInt();
+		double direction = (180.0 / Math.PI) * r.nextInt(360);
 		deltaX = Math.cos(direction) * DELTA_MULTIPLIER;
 		deltaY = Math.sin(direction) * DELTA_MULTIPLIER;
 	}
